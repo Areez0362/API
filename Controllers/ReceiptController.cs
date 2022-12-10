@@ -23,9 +23,6 @@ namespace API.Controllers
         [ActionName("GetReceiptInfo")]
         public async Task<IActionResult> GetReceiptInfo([FromRoute] Guid id)
         {
-            //var receipt = await itemdbContext.Receipts.FindAsync(id);
-            //3aaaaaaa-bbbb-cccc-dddd-2eeeeeeeeeee
-
             var innerJoin = from s in itemdbContext.Receipts // outer sequence
                             join st in itemdbContext.SoldItems //inner sequence 
                             on s.ReceiptID equals st.ReceiptID

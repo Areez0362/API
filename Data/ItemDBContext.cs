@@ -21,7 +21,7 @@ namespace API.Data
             });
 
             builder.Entity<SoldItems>().HasKey(table => new {
-                table.ItemID
+                table.ItemID, table.ReceiptID
             });
 
         }
